@@ -714,6 +714,7 @@ class BarTouchTooltipData with EquatableMixin {
     TooltipDirection? direction,
     double? rotateAngle,
     BorderSide? tooltipBorder,
+    bool? showOnTopOfTheChartBoxArea,
   })  : tooltipBgColor = tooltipBgColor ?? Colors.blueGrey.darken(15),
         tooltipRoundedRadius = tooltipRoundedRadius ?? 4,
         tooltipPadding = tooltipPadding ??
@@ -729,6 +730,7 @@ class BarTouchTooltipData with EquatableMixin {
         direction = direction ?? TooltipDirection.auto,
         rotateAngle = rotateAngle ?? 0.0,
         tooltipBorder = tooltipBorder ?? BorderSide.none,
+        showOnTopOfTheChartBoxArea = showOnTopOfTheChartBoxArea ?? false,
         super();
 
   /// The tooltip background color.
@@ -769,6 +771,8 @@ class BarTouchTooltipData with EquatableMixin {
 
   /// The tooltip border color.
   final BorderSide tooltipBorder;
+
+  final bool showOnTopOfTheChartBoxArea;
 
   /// Used for equality check, see [EquatableMixin].
   @override
