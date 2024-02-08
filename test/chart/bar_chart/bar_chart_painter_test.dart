@@ -1057,8 +1057,11 @@ void main() {
       ];
 
       final tooltipData = BarTouchTooltipData(
+        tooltipThemeData: const TooltipThemeData(
+          decoration: BoxDecoration(color: Color(0xf33f33f3)),
+          textStyle: textStyle1,
+        ),
         tooltipRoundedRadius: 8,
-        tooltipBgColor: const Color(0xf33f33f3),
         maxContentWidth: 80,
         rotateAngle: 12,
         tooltipBorder: const BorderSide(color: Color(0xf33f33f3), width: 2),
@@ -1251,7 +1254,11 @@ void main() {
 
       final tooltipData = BarTouchTooltipData(
         tooltipRoundedRadius: 8,
-        tooltipBgColor: const Color(0xf33f33f3),
+        tooltipThemeData: const TooltipThemeData(
+          decoration: BoxDecoration(
+            color: Color(0xf33f33f3),
+          ),
+        ),
         maxContentWidth: 80,
         rotateAngle: 12,
         direction: TooltipDirection.bottom,
@@ -1418,7 +1425,11 @@ void main() {
 
       final tooltipData = BarTouchTooltipData(
         tooltipRoundedRadius: 8,
-        tooltipBgColor: const Color(0xf33f33f3),
+        tooltipThemeData: const TooltipThemeData(
+          decoration: BoxDecoration(
+            color: Color(0xf33f33f3),
+          ),
+        ),
         maxContentWidth: 8000,
         rotateAngle: 12,
         fitInsideHorizontally: true,
