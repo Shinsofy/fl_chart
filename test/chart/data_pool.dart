@@ -329,7 +329,7 @@ class MockData {
   );
 
   static final lineTouchResponse1 =
-      LineTouchResponse([lineBarSpot1, lineBarSpot2]);
+      LineTouchResponse([lineBarSpot1, lineBarSpot2], const FlSpot(1, 1));
 
   static final barChartRodData1 = BarChartRodData(toY: 11);
   static final barChartRodData2 = BarChartRodData(toY: 22);
@@ -1033,6 +1033,7 @@ final LineChartBarData lineChartBarData9 = LineChartBarData(
   preventCurveOverShooting: true,
   preventCurveOvershootingThreshold: 1.2,
   showingIndicators: [0, 1],
+  isDraggable: true,
 );
 
 final TouchLineBarSpot lineBarSpot1 = TouchLineBarSpot(
@@ -1048,8 +1049,12 @@ final TouchLineBarSpot lineBarSpot1Clone = TouchLineBarSpot(
   0,
 );
 
-final TouchLineBarSpot lineBarSpot2 =
-    TouchLineBarSpot(lineChartBarData1, 2, flSpot1, 2);
+final TouchLineBarSpot lineBarSpot2 = TouchLineBarSpot(
+  lineChartBarData1,
+  2,
+  flSpot1,
+  2,
+);
 
 final TouchLineBarSpot lineBarSpot3 = TouchLineBarSpot(
   lineChartBarData1,
@@ -1063,12 +1068,14 @@ final LineTouchResponse lineTouchResponse1 = LineTouchResponse(
     lineBarSpot1,
     lineBarSpot2,
   ],
+  const FlSpot(1, 1),
 );
 final LineTouchResponse lineTouchResponse1Clone = LineTouchResponse(
   [
     lineBarSpot1Clone,
     lineBarSpot2,
   ],
+  const FlSpot(1, 1),
 );
 
 final LineTouchResponse lineTouchResponse2 = LineTouchResponse(
@@ -1076,17 +1083,18 @@ final LineTouchResponse lineTouchResponse2 = LineTouchResponse(
     lineBarSpot2,
     lineBarSpot1,
   ],
+  const FlSpot(1, 1),
 );
 
-const LineTouchResponse lineTouchResponse3 = LineTouchResponse(
-  [],
-);
+const LineTouchResponse lineTouchResponse3 =
+    LineTouchResponse([], FlSpot(1, 1));
 
 final LineTouchResponse lineTouchResponse4 = LineTouchResponse(
   [
     lineBarSpot1,
     lineBarSpot2,
   ],
+  const FlSpot(1, 1),
 );
 
 final LineTouchResponse lineTouchResponse5 = LineTouchResponse(
@@ -1094,6 +1102,7 @@ final LineTouchResponse lineTouchResponse5 = LineTouchResponse(
     lineBarSpot1,
     lineBarSpot2,
   ],
+  const FlSpot(1, 1),
 );
 
 const TouchedSpotIndicatorData touchedSpotIndicatorData1 =
@@ -1288,6 +1297,9 @@ const LineTouchTooltipData lineTouchTooltipData7 = LineTouchTooltipData(
 );
 
 void lineTouchCallback(FlTouchEvent event, LineTouchResponse? response) {}
+void dragSpotUpdateFinishedCallback(UpdatedDragSpotsData data) {}
+void dragSpotUpdateCallback(UpdatedDragSpotsData data) {}
+void dragSpotUpdateStartedCallback(UpdatedDragSpotsData data) {}
 
 List<TouchedSpotIndicatorData?> getTouchedSpotIndicator(
   LineChartBarData barData,
@@ -1315,6 +1327,9 @@ const LineTouchData lineTouchData2 = LineTouchData(
   handleBuiltInTouches: false,
   touchSpotThreshold: 12,
   touchTooltipData: lineTouchTooltipData1,
+  dragSpotUpdateCallback: dragSpotUpdateCallback,
+  dragSpotUpdateFinishedCallback: dragSpotUpdateCallback,
+  dragSpotUpdateStartedCallback: dragSpotUpdateCallback,
 );
 const LineTouchData lineTouchData3 = LineTouchData(
   touchCallback: lineTouchCallback,
