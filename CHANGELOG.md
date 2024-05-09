@@ -1,4 +1,5 @@
 ## newVersion
+* **IMPROVEMENT** (by @JoshMart) Remove references to deprecated `axisTitleData` property from code and docs, #1259, #1201
 * **Improvement** (by @imaNNeo) Update LineChartSample6 to implement a way to show a tooltip on a single spot, #1620
 
 ## 0.67.0
