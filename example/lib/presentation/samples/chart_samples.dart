@@ -1,3 +1,4 @@
+import 'package:fl_chart_app/presentation/samples/radar/radar_chart_sample2.dart';
 import 'package:fl_chart_app/util/app_helper.dart';
 
 import 'bar/bar_chart_sample1.dart';
@@ -62,7 +63,8 @@ class ChartSamples {
       ScatterChartSample(2, (context) => const ScatterChartSample2()),
     ],
     ChartType.radar: [
-      RadarChartSample(1, (context) => RadarChartSample1()),
+      // RadarChartSample(1, (context) => RadarChartSample1()),
+      RadarChartSample(2, (context) => RadarChartSample2()),
     ],
   };
 }
