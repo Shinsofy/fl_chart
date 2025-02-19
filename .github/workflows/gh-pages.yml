@@ -18,7 +18,7 @@ jobs:
           VERSION=$(grep "version:" pubspec.yaml | awk '{ print $2 }')
           echo "USING_FL_CHART_VERSION=$VERSION" >> $GITHUB_ENV
 
-      - uses: bluefireteam/flutter-gh-pages@v8
+      - uses: bluefireteam/flutter-gh-pages@v9
         with:
           workingDir: example
           customArgs: --dart-define="USING_FL_CHART_VERSION=${{ env.USING_FL_CHART_VERSION }}"
